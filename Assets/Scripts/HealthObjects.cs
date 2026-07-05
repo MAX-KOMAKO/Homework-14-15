@@ -1,22 +1,23 @@
 using UnityEngine;
 
-public class HealthObjects : EffectsObjects
+public class HealthObjects : EffectObject
 {
     [SerializeField] private float _healthAmount = 20f;
-    private Health _cachedHealth;
 
-    public override void PickUp(Transform holdPoint)
+    public override bool CanUse(GameObject user)
     {
-        base.PickUp(holdPoint);
-        _cachedHealth = _playerTransform?.GetComponent<Health>();
+        return user.GetComponent<Health>() != null;
     }
 
-    public override void Use(Transform spawnPoint)
+    public override void Use(GameObject user, Transform spawnPoint)
     {
-        if (_cachedHealth != null)
+        Health health = user.GetComponent<Health>();
+        if (health == null)
         {
-            _cachedHealth.AddHealth(_healthAmount);
+            Debug.LogError("HealthObjects: пользователь не имеет компонента Health. Использование невозможно.");
+            return;
         }
-        base.Use(spawnPoint);
+        health.AddHealth(_healthAmount);
+        base.Use(user, spawnPoint);
     }
 }

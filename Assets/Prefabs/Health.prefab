@@ -43,17 +43,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 6b2476253504f40dbbab536d2d0e57c1,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.64774686
+      value: 0.64774996
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6b2476253504f40dbbab536d2d0e57c1,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.64774686
+      value: 0.64774996
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6b2476253504f40dbbab536d2d0e57c1,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.64774686
+      value: 0.64774996
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6b2476253504f40dbbab536d2d0e57c1,
         type: 3}
@@ -78,7 +78,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 6b2476253504f40dbbab536d2d0e57c1,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6b2476253504f40dbbab536d2d0e57c1,
         type: 3}
@@ -166,8 +166,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22516d0f3ddd44af7b434a498ad01f2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _useParticlePrefab: {fileID: 2824241901045909767, guid: b9f50320c88de42308ac8c730de6dfa5,
+  _useParticleEffect: {fileID: 2684692550016537016, guid: b9f50320c88de42308ac8c730de6dfa5,
     type: 3}
+  _idleRotationSpeed: 30
   _healthAmount: 20
 --- !u!4 &4427251223899704003 stripped
 Transform:

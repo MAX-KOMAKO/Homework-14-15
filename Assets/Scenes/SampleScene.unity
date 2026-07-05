@@ -166,7 +166,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10bbbd666252d4d61bb260de44a22e66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _itemPrefab: {fileID: 4829926578193573699, guid: 161769bb0cd6c40e794681bc70658d17,
+  _itemPrefab: {fileID: 5731421911476020862, guid: 161769bb0cd6c40e794681bc70658d17,
     type: 3}
   _spawnDelay: 3
   _spawnRotationOffset: {x: 0, y: 0, z: 0}
@@ -607,6 +607,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _moveSpeed: 5
   _rotationSpeed: 10
+  _holdPoint: {fileID: 1373006239}
 --- !u!114 &672773205
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1160,7 +1161,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10bbbd666252d4d61bb260de44a22e66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _itemPrefab: {fileID: 3907735950293520505, guid: 8e446fad5469245dca300e120fa6a960,
+  _itemPrefab: {fileID: 280900833109707870, guid: 8e446fad5469245dca300e120fa6a960,
     type: 3}
   _spawnDelay: 2
   _spawnRotationOffset: {x: 0, y: 0, z: 0}
@@ -1208,7 +1209,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10bbbd666252d4d61bb260de44a22e66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _itemPrefab: {fileID: 4651180455228539733, guid: ce6f41151eea34db992843747aa0d637,
+  _itemPrefab: {fileID: 8443860656281518304, guid: a313732577aaf416089c4a6695324fb3,
     type: 3}
   _spawnDelay: 1
   _spawnRotationOffset: {x: 0, y: 0, z: 0}

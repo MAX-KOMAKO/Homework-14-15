@@ -1,22 +1,23 @@
 using UnityEngine;
 
-public class SpeedObjects : EffectsObjects
+public class SpeedObjects : EffectObject
 {
     [SerializeField] private float _speedIncrease = 2f;
-    private Ghost _cachedGhost;
 
-    public override void PickUp(Transform holdPoint)
+    public override bool CanUse(GameObject user)
     {
-        base.PickUp(holdPoint);
-        _cachedGhost = _playerTransform?.GetComponent<Ghost>();
+        return user.GetComponent<Ghost>() != null;
     }
 
-    public override void Use(Transform spawnPoint)
+    public override void Use(GameObject user, Transform spawnPoint)
     {
-        if (_cachedGhost != null)
+        Ghost ghost = user.GetComponent<Ghost>();
+        if (ghost == null)
         {
-            _cachedGhost.IncreaseSpeed(_speedIncrease);
+            Debug.LogError("SpeedObjects: пользователь не имеет компонента Ghost. Использование невозможно.");
+            return;
         }
-        base.Use(spawnPoint);
+        ghost.IncreaseSpeed(_speedIncrease);
+        base.Use(user, spawnPoint);
     }
 }

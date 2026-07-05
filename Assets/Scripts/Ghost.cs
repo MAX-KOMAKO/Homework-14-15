@@ -6,9 +6,10 @@ public class Ghost : MonoBehaviour
 
     [SerializeField] private float _moveSpeed = 5f;
     [SerializeField] private float _rotationSpeed = 10f;
-    private EffectsObjects _currentItem;
+    [SerializeField] private Transform _holdPoint;
+
+    private EffectObject _currentItem;
     private Health _health;
-    private Transform _holdPoint;
 
     private void Awake()
     {
@@ -17,11 +18,9 @@ public class Ghost : MonoBehaviour
         {
             Debug.LogError("Компонент Health отсутствует на объекте Ghost");
         }
-
-        _holdPoint = transform.Find("HoldPoint");
         if (_holdPoint == null)
         {
-            Debug.LogError("Дочерний объект 'HoldPoint' не найден. Создайте пустой дочерний объект с именем 'HoldPoint'.");
+            Debug.LogError("HoldPoint не назначен в инспекторе");
         }
     }
 
@@ -64,7 +63,7 @@ public class Ghost : MonoBehaviour
         {
             if (_currentItem != null)
             {
-                _currentItem.Use(_holdPoint);
+                _currentItem.Use(gameObject, _holdPoint);
                 _currentItem = null;
             }
             else
@@ -76,22 +75,19 @@ public class Ghost : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        EffectsObjects item = other.GetComponent<EffectsObjects>();
-        if (item != null)
+        EffectObject item = other.GetComponent<EffectObject>();
+        if (item != null && item.CanUse(gameObject))
         {
             PickUpItem(item);
         }
     }
 
-    public void PickUpItem(EffectsObjects item)
+    public void PickUpItem(EffectObject item)
     {
         if (_currentItem == null)
         {
             _currentItem = item;
-            if (_holdPoint != null)
-                item.PickUp(_holdPoint);
-            else
-                item.PickUp(transform);
+            item.PickUp(_holdPoint != null ? _holdPoint : transform);
         }
         else
         {

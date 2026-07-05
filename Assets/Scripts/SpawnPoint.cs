@@ -2,14 +2,14 @@ using UnityEngine;
 
 public class SpawnPoint : MonoBehaviour
 {
-    [SerializeField] private GameObject _itemPrefab;
+    [SerializeField] private EffectObject _itemPrefab;
     [SerializeField] private float _spawnDelay = 0f;
     [SerializeField] private Vector3 _spawnRotationOffset = Vector3.zero;
 
     private void Awake()
     {
-        EffectsObjects[] allItems = FindObjectsOfType<EffectsObjects>();
-        foreach (EffectsObjects item in allItems)
+        EffectObject[] allItems = FindObjectsOfType<EffectObject>();
+        foreach (EffectObject item in allItems)
         {
             Destroy(item.gameObject);
         }

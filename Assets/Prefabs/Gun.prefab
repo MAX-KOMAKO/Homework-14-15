@@ -130,9 +130,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a15b8695abd36404aba72445bb9ba6fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _useParticlePrefab: {fileID: 2824241901045909767, guid: b9f50320c88de42308ac8c730de6dfa5,
+  _useParticleEffect: {fileID: 2684692550016537016, guid: b9f50320c88de42308ac8c730de6dfa5,
     type: 3}
-  _projectilePrefab: {fileID: 5058784630973345948, guid: 675be9fa67beb4e99b4460fa61a22e6e,
+  _idleRotationSpeed: 30
+  _projectilePrefab: {fileID: 5458877292138709453, guid: 675be9fa67beb4e99b4460fa61a22e6e,
     type: 3}
   _projectileSpeed: 10
   _projectileLifetime: 3
